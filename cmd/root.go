@@ -4,8 +4,13 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/yasukotelin/bcon/counter"
+
 	"github.com/spf13/cobra"
-	"github.com/yasukotelin/bcon/utf8"
+)
+
+var (
+	cset string
 )
 
 var rootCmd = &cobra.Command{
@@ -16,10 +21,19 @@ var rootCmd = &cobra.Command{
 		if len(args) == 0 {
 			cmd.Help()
 		} else {
-			n := utf8.Count(args[0])
-			fmt.Println(n)
+			n, err := counter.Count(args[0], cset)
+			if err != nil {
+				fmt.Println(err)
+				os.Exit(1)
+			} else {
+				fmt.Println(n)
+			}
 		}
 	},
+}
+
+func init() {
+	rootCmd.Flags().StringVarP(&cset, "cset", "c", "utf8", "charset flag")
 }
 
 // Execute はRootコマンドの実行関数
