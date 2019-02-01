@@ -53,3 +53,44 @@ $ bcon "スペースあり          "
 ## Supported character sets
 
 https://encoding.spec.whatwg.org/#names-and-labels
+
+## Docker use
+
+GO環境を用意せずにDockerを使用する場合は以下の手順でどぞ
+
+### Docker build
+
+1. プロジェクトのClone
+
+```
+$ clone https://github.com/yasukotelin/bcon.git
+$ cd bcon
+```
+
+2. Docker Build
+
+```
+$ docker build -t bcon
+```
+
+### How to use
+
+### help
+
+```
+$ docker run --rm bcon --help
+```
+
+### utf8
+
+```
+$ docker run --rm bcon こんにちは！
+15
+```
+
+### Charset
+
+```
+$ docker run --rm bcon --cset sjis こんにちは！
+10
+```
