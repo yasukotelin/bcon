@@ -1,2 +1,2 @@
 # bcon
-bconは文字列のByte数をカウントするツールです
+"becon" is the tool to count up byte number of String.
