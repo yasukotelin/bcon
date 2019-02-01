@@ -70,7 +70,7 @@ $ cd bcon
 2. Docker Build
 
 ```
-$ docker build -t bcon
+$ docker build -t bcon .
 ```
 
 ### How to use
