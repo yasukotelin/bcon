@@ -9,14 +9,19 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const (
+	v = "1.0.0"
+)
+
 var (
 	cset string
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "bcon",
-	Short: "count up byte number of string",
-	Long:  "bcon is the tool to count up byte number of string",
+	Use:     "bcon",
+	Version: v,
+	Short:   "count up byte number of string",
+	Long:    "bcon is the tool to count up byte number of string",
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
 			cmd.Help()
