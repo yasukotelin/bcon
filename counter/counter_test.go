@@ -44,3 +44,25 @@ func TestCountToShiftJIS3(t *testing.T) {
 		t.Fatalf("failed test. expected = %v actual = %v", expected, actual)
 	}
 }
+
+func TestCountWithSpaces(t *testing.T) {
+	s := "テスト     "
+	cset := "utf8"
+	expected := 5*1 + 3*3
+
+	actual, _ := Count(s, cset)
+	if actual != expected {
+		t.Fatalf("failed test. expected = %v actual = %v", expected, actual)
+	}
+}
+
+func TestCountToSjisWithSpaces(t *testing.T) {
+	s := "テスト     "
+	cset := "sjis"
+	expected := 5*1 + 3*2
+
+	actual, _ := Count(s, cset)
+	if actual != expected {
+		t.Fatalf("failed test. expected = %v actual = %v", expected, actual)
+	}
+}

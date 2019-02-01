@@ -43,6 +43,13 @@ $ bcon -c sjis あいうえお
 10
 ```
 
+文字列にスペースを含ませたい場合はダブルクォーテーションで囲んであげてください。
+
+```
+$ bcon "スペースあり          "
+28
+```
+
 ## Supported character sets
 
 https://encoding.spec.whatwg.org/#names-and-labels
